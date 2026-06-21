@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paguera - Portail NAS & Services</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="background-glows">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i data-lucide="server"></i>
+                </div>
+                <h1>Paguera</h1>
+            </div>
+            <p class="subtitle">Portail d'accès aux services du NAS</p>
+            <div class="status-badge">
+                <span class="status-indicator-dot"></span>
+                <span class="status-text">Services en ligne</span>
+            </div>
+        </header>
+
+        <section class="services-grid">
+            <!-- Service Card 1 -->
+            <a href="https://nas.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="card-inner">
+                    <div class="card-icon blue">
+                        <i data-lucide="hard-drive"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Stockage NAS</h3>
+                        <p>Accès aux fichiers partagés, sauvegardes et gestion du stockage.</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service Card 2 -->
+            <a href="https://nextcloud.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="card-inner">
+                    <div class="card-icon green">
+                        <i data-lucide="cloud"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Nextcloud</h3>
+                        <p>Votre cloud privé pour synchroniser contacts, calendriers et documents.</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service Card 3 -->
+            <a href="https://plex.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="card-inner">
+                    <div class="card-icon yellow">
+                        <i data-lucide="play-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Plex Media Server</h3>
+                        <p>Streaming de votre bibliothèque multimédia personnelle.</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Service Card 4 -->
+            <a href="https://portainer.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="card-inner">
+                    <div class="card-icon purple">
+                        <i data-lucide="container"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Portainer / Podman</h3>
+                        <p>Interface de gestion et monitoring des conteneurs d'applications.</p>
+                    </div>
+                    <div class="card-arrow">
+                        <i data-lucide="arrow-up-right"></i>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Paguera. Protégé par Cloudflare & Tailscale.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
