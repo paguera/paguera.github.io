@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paguera - Portail NAS & Services</title>
+    <title>Paguera - Portail d'accès</title>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,94 +19,66 @@
     </div>
 
     <main class="container">
-        <header class="header">
-            <div class="logo-area">
+        <div class="portal-card">
+            <header class="header">
                 <div class="logo-icon">
-                    <i data-lucide="server"></i>
+                    <i data-lucide="folder-git-2"></i>
                 </div>
-                <h1>Paguera</h1>
-            </div>
-            <p class="subtitle">Portail d'accès aux services du NAS</p>
-            <div class="status-badge">
-                <span class="status-indicator-dot"></span>
-                <span class="status-text">Services en ligne</span>
-            </div>
-        </header>
+                <h1>PAGUERA</h1>
+                <p class="subtitle">Portail d'accès à mon portfolio</p>
+            </header>
 
-        <section class="services-grid">
-            <!-- Service Card 1 -->
-            <a href="https://nas.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
-                <div class="card-inner">
-                    <div class="card-icon blue">
-                        <i data-lucide="hard-drive"></i>
+            <section class="info-section">
+                <div class="schedule-box">
+                    <div class="schedule-header">
+                        <i data-lucide="clock"></i>
+                        <span>Horaires de disponibilité</span>
                     </div>
-                    <div class="card-content">
-                        <h3>Stockage NAS</h3>
-                        <p>Accès aux fichiers partagés, sauvegardes et gestion du stockage.</p>
-                    </div>
-                    <div class="card-arrow">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
+                    <p class="time-range">9h &rarr; 20h</p>
+                    <p class="days">Tous les jours</p>
                 </div>
-            </a>
 
-            <!-- Service Card 2 -->
-            <a href="https://nextcloud.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
-                <div class="card-inner">
-                    <div class="card-icon green">
-                        <i data-lucide="cloud"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Nextcloud</h3>
-                        <p>Votre cloud privé pour synchroniser contacts, calendriers et documents.</p>
-                    </div>
-                    <div class="card-arrow">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
+                <div class="status-badge" id="status-badge">
+                    <span class="status-indicator-dot"></span>
+                    <span class="status-text" id="status-text">Vérification en cours...</span>
                 </div>
-            </a>
+            </section>
 
-            <!-- Service Card 3 -->
-            <a href="https://plex.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
-                <div class="card-inner">
-                    <div class="card-icon yellow">
-                        <i data-lucide="play-circle"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Plex Media Server</h3>
-                        <p>Streaming de votre bibliothèque multimédia personnelle.</p>
-                    </div>
-                    <div class="card-arrow">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
-                </div>
-            </a>
+            <section class="action-area">
+                <a href="https://portfolio.paguera.fr" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    <span>Accéder au Portfolio</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </section>
 
-            <!-- Service Card 4 -->
-            <a href="https://portainer.paguera.fr" class="card" target="_blank" rel="noopener noreferrer">
-                <div class="card-inner">
-                    <div class="card-icon purple">
-                        <i data-lucide="container"></i>
-                    </div>
-                    <div class="card-content">
-                        <h3>Portainer / Podman</h3>
-                        <p>Interface de gestion et monitoring des conteneurs d'applications.</p>
-                    </div>
-                    <div class="card-arrow">
-                        <i data-lucide="arrow-up-right"></i>
-                    </div>
-                </div>
-            </a>
-        </section>
-
-        <footer class="footer">
-            <p>&copy; 2026 Paguera. Protégé par Cloudflare & Tailscale.</p>
-        </footer>
+            <footer class="footer">
+                <p>&copy; 2026 Paguera. Hébergé de manière écoresponsable.</p>
+            </footer>
+        </div>
     </main>
 
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
+
+        // Dynamically check if the portfolio is online based on the schedule (9h to 20h)
+        function updateStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const badge = document.getElementById('status-badge');
+            const statusText = document.getElementById('status-text');
+
+            if (hour >= 9 && hour < 20) {
+                badge.className = 'status-badge online';
+                statusText.textContent = 'En ligne (Disponible)';
+            } else {
+                badge.className = 'status-badge offline';
+                statusText.textContent = 'Hors ligne (Fermé)';
+            }
+        }
+
+        updateStatus();
+        setInterval(updateStatus, 60000); // Update status every minute
     </script>
 </body>
 </html>
